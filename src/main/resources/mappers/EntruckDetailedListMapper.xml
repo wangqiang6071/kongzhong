@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingbo.kongzhong.dao.EntruckDetailedListMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jingbo.kongzhong.entity.EntruckDetailedList">
+        <id column="id" property="id" />
+        <result column="train_order" property="trainOrder" />
+        <result column="train_model" property="trainModel" />
+        <result column="license_no" property="licenseNo" />
+        <result column="contener_no" property="contenerNo" />
+        <result column="container_weight" property="containerWeight" />
+        <result column="good" property="good" />
+        <result column="goods_name" property="goodsName" />
+        <result column="alarm_msg" property="alarmMsg" />
+        <result column="manual_processing" property="manualProcessing" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="total_time" property="totalTime" />
+    </resultMap>
+
+</mapper>

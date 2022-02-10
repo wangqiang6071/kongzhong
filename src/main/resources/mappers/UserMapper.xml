@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingbo.kongzhong.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.jingbo.kongzhong.entity.User">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="head_url" jdbcType="VARCHAR" property="headUrl" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+  </resultMap>
+
+  <select id="selectRoleListByUserAccount" resultType="com.jingbo.kongzhong.entity.Role">
+    SELECT
+      role.*
+    FROM
+        role role
+        LEFT JOIN user_role userole ON role.id=userole.role_id
+        LEFT JOIN user users ON users.id=userole.user_id
+    WHERE users.account=#{account}
+  </select>
+
+  <select id="selectUserByAccount" resultMap="BaseResultMap">
+    select * from user where account=#{account}
+  </select>
+
+</mapper>

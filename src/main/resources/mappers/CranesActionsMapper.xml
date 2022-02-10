@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingbo.kongzhong.dao.CranesActionsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jingbo.kongzhong.entity.CranesActions">
+        <id column="id" property="id" />
+        <result column="serial_no" property="serialNo" />
+        <result column="device_no" property="deviceNo" />
+        <result column="train_order" property="trainOrder" />
+        <result column="action" property="action" />
+        <result column="result" property="result" />
+        <result column="alarm_level" property="alarmLevel" />
+        <result column="alarm_msg" property="alarmMsg" />
+        <result column="manual_processing" property="manualProcessing" />
+        <result column="radar_distance_one" property="radarDistanceOne" />
+        <result column="radar_distance_two" property="radarDistanceTwo" />
+        <result column="up_order" property="upOrder" />
+        <result column="down_order" property="downOrder" />
+        <result column="train_weight" property="trainWeight" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="original_container_no" property="originalContainerNo" />
+        <result column="calibration_container_no" property="calibrationContainerNo" />
+        <result column="container_pic_one" property="containerPicOne" />
+        <result column="container_pic_two" property="containerPicTwo" />
+        <result column="container_weight" property="containerWeight" />
+        <result column="train_no_one_old" property="trainNoOneOld" />
+        <result column="train_no_two_old" property="trainNoTwoOld" />
+        <result column="train_type_one_old" property="trainTypeOneOld" />
+        <result column="train_type_two_old" property="trainTypeTwoOld" />
+        <result column="train_no_one_calibration" property="trainNoOneCalibration" />
+        <result column="train_no_two_calibration" property="trainNoTwoCalibration" />
+        <result column="train_type_one_calibration" property="trainTypeOneCalibration" />
+        <result column="train_type_two_calibration" property="trainTypeTwoCalibration" />
+        <result column="train_no_one_pic_one" property="trainNoOnePicOne" />
+        <result column="train_no_one_pic_two" property="trainNoOnePicTwo" />
+        <result column="train_no_one_pic_three" property="trainNoOnePicThree" />
+        <result column="train_no_one_pic_four" property="trainNoOnePicFour" />
+        <result column="train_no_two_pic_one" property="trainNoTwoPicOne" />
+        <result column="train_no_two_pic_two" property="trainNoTwoPicTwo" />
+        <result column="train_no_two_pic_three" property="trainNoTwoPicThree" />
+        <result column="train_no_two_pic_four" property="trainNoTwoPicFour" />
+        <result column="createTime" property="createTime" />
+    </resultMap>
+
+</mapper>

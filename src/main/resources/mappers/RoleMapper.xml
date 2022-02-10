@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingbo.kongzhong.dao.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.jingbo.kongzhong.entity.Role">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <collection property="permissionList" ofType="com.jingbo.kongzhong.entity.Permission">
+      <id column="id" jdbcType="INTEGER" property="id" />
+      <result column="permission_name" jdbcType="VARCHAR" property="permissionName" />
+      <result column="permission_key" jdbcType="VARCHAR" property="permissionKey" />
+      <result column="permission_url" jdbcType="VARCHAR" property="permissionUrl" />
+      <result column="status" jdbcType="INTEGER" property="status" />
+      <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    </collection>
+  </resultMap>
+    <select id="selectPermissonByRoleId" resultType="com.jingbo.kongzhong.entity.Permission">
+      select
+        permisson.*
+      from email_permission permisson
+             left join email_role_permission rp on rp.permission_id= permisson.id
+             left join email_role role on role.id=rp.role_id
+      where role.id=#{roleId}
+    </select>
+
+</mapper>

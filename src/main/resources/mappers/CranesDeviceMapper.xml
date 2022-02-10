@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jingbo.kongzhong.dao.CranesDeviceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jingbo.kongzhong.entity.CranesDevice">
+        <id column="id" property="id" />
+        <result column="dept_id" property="deptId" />
+        <result column="crane_type" property="craneType" />
+        <result column="device_name" property="deviceName" />
+        <result column="device_code" property="deviceCode" />
+        <result column="device_ip" property="deviceIp" />
+        <result column="sling_weight_max" property="slingWeightMax" />
+        <result column="sling_weight_min" property="slingWeightMin" />
+        <result column="radar_max" property="radarMax" />
+        <result column="radar_min" property="radarMin" />
+        <result column="trigger_weight" property="triggerWeight" />
+        <result column="order_no" property="orderNo" />
+        <result column="status" property="status" />
+        <result column="remark" property="remark" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,53 @@
+#服务器端口
+server:
+  port: 8080
+#静态资源位置和视图解析器
+resources:
+  static-locations:
+    - classpath:/static/
+spring:
+  redis:
+    host: 8.136.217.245
+    port: 6379
+    timeout: 3000
+  datasource:
+    username: root
+    url: jdbc:mysql://119.3.36.78:3306/kongzhong?useTimezone=true&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8&autoReconnect=true
+    password: Matrix2021@
+    #password: 121314@wq
+    #url: jdbc:mysql://8.136.217.245:3309/kongzhong?useTimezone=true&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8&autoReconnect=true
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  #freemark`
+  freemarker:
+    charset: UTF-8
+    suffix: .html
+    content-type: text/html; charset=utf-8
+    template-loader-path: classpath:/templates/
+    static-path-pattern: /static/**
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      #时间统一返回时间戳
+      write-dates-as-timestamps: true
+#mybatis是独立节点，需要单独配置
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.jingbo.kongzhong.entity
+  configuration:
+    map-underscore-to-camel-case: true
+shiro:
+  password:
+    salt: zSyK5Kp6PZAAjlT+eeNMlg==
+    random: 20
+    #账号错误次数
+    times: 10
+    #账号锁定时长(单位:分钟)
+    time: 10
+    #强制下线第一个用户
+    kickoutAfter: false
+    #-1 不限制登陆试试
+    maxSession: -1
+    #token 实效时间 (单位:分钟)
+    expireTime: 30
+    address: /user/needlogin/
